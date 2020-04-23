@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Paytone+One&family=Lora&family=Fredoka+One&display=swap');
+
+.pictures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 0px;
+  width: 100%;
+  background-color: #000;
+}
+
+.pictures .picture{
+  height: 325px;
+  width: 100%;
+  /* background-color: lightblue;
+  border: 1px solid black; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.picture.one {
+  grid-area: 1 / 1 / 2 / 2;
+  background-image: url('../images/main_page_one.jpg');
+}
+
+.picture.two {
+  grid-area: 1 / 2 / 2 / 3;
+  background-image: url('../images/main_page_two.jpg');
+}
+
+.picture.three {
+  grid-area: 1 / 3 / 2 / 4;
+  background-image: url('../images/main_page_three.jpg');
+}
+
+.picture.four {
+  grid-area: 1 / 4 / 2 / 5;
+  background-image: url('../images/main_page_four.jpg');
+}
+
+header .title {
+  background-color: #E4BA21;
+  height: 210px;
+}
+
+header .title h1 {
+  height: 100%;
+  line-height: 210px;
+  vertical-align: middle;
+  text-align: center;
+  color: #000;
+  font-size: 64px;
+  font-family: 'Paytone One';
+}
+
+nav {
+  height: 110px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: space-evenly;
+  height: 110px;
+}
+
+nav ul li {
+  line-height: 110px;
+  vertical-align: middle;
+  font-family: Pacifico;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #FAF5E6;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+main article {
+  max-width: 325px;;
+}
+
+main article .image {
+  width: 325px;
+  height: 325px;
+  background-image: url(../images/main_page_three.jpg);
+  background-size: cover;
+}
+
+main article .title h3{
+  font-family: 'Fredoka One';
+  text-align: center;
+  font-size: 24px;
+  padding: 40px 0px 10px 0px;
+}
+
+main article .excerpt p{
+  font-family: Lora;
+  font-size: 18px;
+}
+
+main article .button {
+  border: 2px solid #000;
+  height: 50px;
+  cursor: pointer;
+}
+
+main article .button p {
+  padding: 0px;
+  margin: 0px;
+  line-height: 45px;
+  vertical-align: middle;
+  font-family: 'Fredoka One';
+  font-size: 18px;
+  text-align: center;
+}
+
+footer {
+  height: 30px;
+  background-color: #000;
+}
+
+footer p {
+    font-size: 18px;
+  font-family: 'Fredoka One';
+
+  color: #fff;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
