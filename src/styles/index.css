@@ -12,8 +12,6 @@
 .pictures .picture{
   height: 325px;
   width: 100%;
-  /* background-color: lightblue;
-  border: 1px solid black; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
@@ -82,20 +80,20 @@ nav ul li {
 main {
   display: flex;
   justify-content: space-evenly;
-  background-color: #FAF5E6;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
-main article {
-  max-width: 325px;;
+#home main {
+  background-color: #FAF5E6;
 }
 
-main article .image {
-  width: 325px;
-  height: 325px;
-  background-image: url(../images/main_page_three.jpg);
-  background-size: cover;
+#kindergarten main {
+  background-color: #61E0D9;
+}
+
+main article {
+  max-width: 325px;;
 }
 
 main article .title h3{

@@ -1,68 +1,44 @@
 import React from "react"
 // import { Link } from "gatsby"
 
-import SEO from "../components/seo"
 import '../styles/index.css'
+import MainStructure from '../components/mainStructure'
+import { graphql } from "gatsby"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const getArticles = () => {
+    const articles = data.allStoryblokEntry.edges.map(article => article.node)
+    return articles
+  }
   return (
-    <div id="app">
-      <SEO title="Home" />
-      <header>
-        <div className="pictures">
-          <div className="picture one"></div>
-          <div className="picture two"></div>
-          <div className="picture three"></div>
-          <div className="picture four"></div>
-        </div>
-        <div className="title">
-          <h1>BLOG EDUKACYJNY</h1>
-        </div>
-      </header>
-      <nav>
-        <ul>
-          <li>Strona główna</li>
-          <li>Edukacja przedszkolna</li>
-          <li>Edukacja wczesnoszkolna</li>
-          <li>Nauczanie języka angielskiego</li>
-          <li>Pedagogika</li>
-          <li>Psychologia</li>
-          <li>O mnie</li>
-        </ul>
-      </nav>
-      <main>
-        {[0,1,2].map(index => (
-          <article key={index}>
-            <div className="image">
-            </div>
-            <div className="title"><h3>Title example</h3></div>
-            <div className="excerpt">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet amet egestas odio nunc, in bibendum mauris. Ac sit tincidunt vitae netus semper.
-              </p>
-            </div>
-            <div className="button">
-              <p>READ</p>
-            </div>
-          </article>
-        ))}
-      </main>
-      <footer><p>© Klaudia 2020</p></footer>
-    </div>
+    <MainStructure type="home" articles={getArticles()} />
   )
 }
 
-// const IndexPage = () => (
-//   <Layout>
-//     <SEO title="Home" />
-//     <h1>Hi people</h1>
-//     <p>Welcome to your new Gatsby site.</p>
-//     <p>Now go build something great.</p>
-//     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-//       <Image />
-//     </div>
-//     <Link to="/page-2/">Go to page 2</Link>
-//   </Layout>
-// )
+export const query = graphql`
+query MyQuery {
+  allStoryblokEntry(limit: 3, filter: {field_component: {eq: "article"}}) {
+    edges {
+      node {
+        id
+        field_content_string
+        field_language_string
+        field_main_image_string
+        field_title_string
+        field_component
+        created_at
+        tag_list
+        selectionImage {
+          childImageSharp {
+            fixed(width: 325, height: 325, quality: 100) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
