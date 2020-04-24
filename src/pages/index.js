@@ -27,6 +27,7 @@ query MyQuery {
         field_title_string
         field_component
         created_at
+        slug
         tag_list
         selectionImage {
           childImageSharp {

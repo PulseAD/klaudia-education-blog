@@ -2,13 +2,12 @@ const path = require(`path`)
 const { createFilePath, createRemoteFileNode } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = async ({ node, getNode, actions, store, cache, createNodeId }) => {
-  // await createRemoteImages({ node, actions, store, cache, createNodeId })
   createNodes(node, getNode, actions)
 }
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   createStoryblokPages(actions, graphql)
-// }
+exports.createPages = async ({ graphql, actions }) => {
+  createStoryblokPages(actions, graphql)
+}
 
 exports.onCreateNode = async ({
   node,
@@ -70,29 +69,29 @@ exports.onCreateNode = async ({
 //   }
 // }
 
-// const createStoryblokPages = async (actions, graphql) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     query {
-//       allStoryblokEntry {
-//         edges {
-//           node {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `)
+const createStoryblokPages = async (actions, graphql) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allStoryblokEntry {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-//   result.data.allStoryblokEntry.edges.forEach(({ node }) => {
-//     createPage({
-//       path: node.slug,
-//       component: path.resolve(`./src/templates/article.js`),
-//       context: {
-//         // Data passed to context is available
-//         // in page queries as GraphQL variables.
-//         slug: node.slug,
-//       },
-//     })
-//   })
-// }
+  result.data.allStoryblokEntry.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/article.js`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.slug,
+      },
+    })
+  })
+}

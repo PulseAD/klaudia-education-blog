@@ -1,16 +1,20 @@
 import React from 'react'
 import Menu from '../components/menu'
+import Footer from '../components/footer'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
+import { Link } from 'gatsby'
+import removeMd from 'remove-markdown'
 
 const MainStructure = (props) => {
 
   const getExcerpt = (article) => {
-    return article.field_content_string.slice(0, 100) + ' ...'
+    const content = removeMd(article.field_content_string)
+    return content.slice(0, 100) + ' ...'
   }
 
   return (
-    <div id={props.type}>
+    <div id={props.type} className="main-structure">
       <SEO title="Home" />
       <header>
         <div className="pictures">
@@ -27,21 +31,25 @@ const MainStructure = (props) => {
       <main>
         {props.articles.map(article => (
           <article key={article.id}>
-            <Img
-              fixed={article.selectionImage.childImageSharp.fixed}
-              alt={article.title}
-              />
-            <div className="title"><h3>{ article.field_title_string }</h3></div>
-            <div className="excerpt">
-              <p>{ getExcerpt(article) }</p>
-            </div>
-            <div className="button">
-              <p>READ</p>
+            <div className="article-container">
+              <Img
+                fixed={article.selectionImage.childImageSharp.fixed}
+                alt={article.title}
+                />
+              <div className="title"><h3>{ article.field_title_string }</h3></div>
+              <div className="excerpt">
+                <p>{ getExcerpt(article) }</p>
+              </div>
+              <Link to={'/' + article.slug}>
+                <div className="button">
+                  <p>READ</p>
+                </div>
+              </Link>
             </div>
           </article>
         ))}
       </main>
-      <footer><p>© Klaudia 2020</p></footer>
+      <Footer />
     </div>
   )
 }

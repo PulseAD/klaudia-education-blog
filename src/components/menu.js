@@ -1,10 +1,11 @@
 import React from "react"
+import { Link } from 'gatsby'
 
 const Menu = () => {
   return (
     <nav>
       <ul>
-        <li>Strona główna</li>
+        <Link to="/"><li>Strona główna</li></Link>
         <li>Edukacja przedszkolna</li>
         <li>Edukacja wczesnoszkolna</li>
         <li>Nauczanie języka angielskiego</li>

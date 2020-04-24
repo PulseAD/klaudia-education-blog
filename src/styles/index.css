@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Paytone+One&family=Lora&family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Paytone+One&family=Lora&family=Fredoka+One&family=Merriweather:wght@400;700&display=swap');
 
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .pictures {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -77,11 +82,11 @@ nav ul li {
   cursor: pointer;
 }
 
-main {
+.main-structure main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   padding-top: 100px;
-  padding-bottom: 100px;
 }
 
 #home main {
@@ -92,29 +97,36 @@ main {
   background-color: #61E0D9;
 }
 
-main article {
-  max-width: 325px;;
+.main-structure main article {
+  width: calc(100% / 3);
+  min-width: 325px;
+  padding-bottom: 100px;
 }
 
-main article .title h3{
+.main-structure main article .article-container {
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+.main-structure main article .title h3{
   font-family: 'Fredoka One';
   text-align: center;
   font-size: 24px;
   padding: 40px 0px 10px 0px;
 }
 
-main article .excerpt p{
+.main-structure main article .excerpt p{
   font-family: Lora;
   font-size: 18px;
 }
 
-main article .button {
+.main-structure main article .button {
   border: 2px solid #000;
   height: 50px;
   cursor: pointer;
 }
 
-main article .button p {
+.main-structure main article .button p {
   padding: 0px;
   margin: 0px;
   line-height: 45px;
@@ -137,4 +149,33 @@ footer p {
   text-align: center;
   padding: 0px;
   margin: 0px;
+}
+
+#article-page main h1 {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  padding: 80px 0px;
+}
+
+#article-page main {
+  background-color: #E8EEF8;
+  font-family: Merriweather;
+}
+
+#article-page main .image-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#article-page main .content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 0px;
+  font-size: 21px;
+}
+
+#article-page main .content img {
+  display: block;
+  padding:10px 0px;
 }
