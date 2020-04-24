@@ -6,11 +6,11 @@ const Menu = () => {
     <nav>
       <ul>
         <Link to="/"><li>Strona główna</li></Link>
-        <li>Edukacja przedszkolna</li>
-        <li>Edukacja wczesnoszkolna</li>
-        <li>Nauczanie języka angielskiego</li>
-        <li>Pedagogika</li>
-        <li>Psychologia</li>
+        <Link to="/elementary-education"><li>Edukacja przedszkolna</li></Link>
+        <Link to="/kindergarten-education"><li>Edukacja wczesnoszkolna</li></Link>
+        <Link to="/teaching-english"><li>Nauczanie języka angielskiego</li></Link>
+        <Link to="/pedagogics"><li>Pedagogika</li></Link>
+        <Link to="/psychology"><li>Psychologia</li></Link>
         <li>O mnie</li>
       </ul>
     </nav>

@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import removeMd from 'remove-markdown'
+import getTitle from '../helpers/getTitle'
 
 const MainStructure = (props) => {
 
@@ -24,7 +25,7 @@ const MainStructure = (props) => {
           <div className="picture four"></div>
         </div>
         <div className="title">
-          <h1>BLOG EDUKACYJNY</h1>
+          <h1>{getTitle(props.type)}</h1>
         </div>
       </header>
       <Menu />
