@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allStoryblokEntry(limit: 3, filter: {field_component: {eq: "article"}}) {
+  allStoryblokEntry(limit: 3, filter: {field_component: {eq: "article"}}, sort: {fields: created_at, order: DESC}) {
     edges {
       node {
         id
