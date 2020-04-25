@@ -74,8 +74,10 @@ header .title {
 
 header .title h1 {
   height: 100%;
-  line-height: 210px;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   text-align: center;
   color: #000;
   font-size: 64px;
@@ -99,10 +101,55 @@ nav ul {
 }
 
 nav ul li {
-  line-height: 110px;
-  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
   font-family: Pacifico;
   font-size: 20px;
+  cursor: pointer;
+  max-width: 150px;
+}
+
+nav .hamburger {
+  font-size: 50px;
+  display: none;
+  cursor: pointer;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 25px;
+}
+
+.overlay-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  font-family: Pacifico;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  border-bottom: 2px solid;
+}
+
+.overlay .cross {
+  text-align: center;
+  font-size: 50px;
   cursor: pointer;
 }
 
@@ -140,6 +187,7 @@ nav ul li {
 #about-me main {
   background-color: #FCF1F1;
 }
+
 .main-structure main article {
   width: calc(100% / 3);
   min-width: 325px;
@@ -185,9 +233,8 @@ footer {
 }
 
 footer p {
-    font-size: 18px;
+  font-size: 18px;
   font-family: 'Fredoka One';
-
   color: #fff;
   text-align: center;
   padding: 0px;
@@ -204,6 +251,7 @@ footer p {
 #article-page main {
   background-color: #E8EEF8;
   font-family: Merriweather;
+  padding: 0px 50px;
 }
 
 #article-page main .image-container {
@@ -221,4 +269,137 @@ footer p {
 #article-page main .content img {
   display: block;
   padding:10px 0px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pictures {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .picture.four {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  nav ul li {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .pictures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .picture.three {
+    display: none;
+  }
+
+  nav ul li {
+    font-size: 14px;
+    max-width: 100px;
+  }
+
+  #article-page main h1 {
+    font-size: 40px;
+    padding: 50px 0px;
+  }
+
+  #article-page main .content {
+    padding: 50px 0px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  nav .hamburger {
+    display: block;
+    padding-top: 40px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pictures {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pictures .picture {
+    height: 200px;
+  }
+
+  .picture.two {
+    display: none;
+  }
+
+  header .title {
+    height: 100px;
+  }
+
+  header .title h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    height: 60px;
+  }
+
+  nav .hamburger {
+    font-size: 20px;
+    padding-top: 18px;
+  }
+
+  .main-structure main {
+    padding-top: 60px;
+  }
+
+  .main-structure main article {
+    padding-bottom: 60px;
+  }
+
+  .main-structure main article .article-container {
+    max-width: 250px;
+  }
+
+  .main-structure main article .gatsby-image-wrapper {
+    height: 250px !important;
+    width: 250px !important;
+  }
+
+  .main-structure main article .title h3{
+    font-size: 20px;
+  }
+
+  .main-structure main article .excerpt p{
+    font-size: 16px;
+  }
+
+  .main-structure main article .button p {
+    font-size: 16px;
+  }
+
+  footer p{
+    font-size: 14px;
+  }
+
+  #article-page main {
+    background-color: #E8EEF8;
+    font-family: Merriweather;
+    padding: 0px 20px;
+  }
+
+  #article-page main h1 {
+    font-size: 24px;
+    padding: 30px 0px;
+  }
+
+  #article-page main .content {
+    padding: 30px 0px;
+    font-size: 14px;
+  }
 }

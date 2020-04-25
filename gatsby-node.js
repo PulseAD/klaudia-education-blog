@@ -20,7 +20,6 @@ exports.onCreateNode = async ({
     node.internal.type === "StoryblokEntry" &&
     node.field_main_image_string !== null
   ) {
-    console.log(node.field_component)
     let fileNode = await createRemoteFileNode({
       url: node.field_main_image_string, // string that points to the URL of the image
       parentNodeId: node.id, // id of the parent node of the fileNode you are going to create

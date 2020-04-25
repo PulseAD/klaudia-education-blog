@@ -7,7 +7,6 @@ import ReactMarkdown from 'react-markdown'
 
 export default ({ data }) => {
   const article = data.storyblokEntry
-  console.log(article)
   return (
     <div id="article-page">
       <Menu />
@@ -15,7 +14,7 @@ export default ({ data }) => {
         <h1>{article.field_title_string}</h1>
         <div className="image-container">
           <Image
-            fixed={article.mainImage.childImageSharp.fixed}
+            fluid={article.mainImage.childImageSharp.fluid}
             alt="Main article image"
           />
         </div>
@@ -36,9 +35,9 @@ export const query = graphql`
       slug
       name
       mainImage {
-          childImageSharp {
-          fixed(width: 1000) {
-            ...GatsbyImageSharpFixed
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

@@ -24,7 +24,6 @@ const Image = ({ src }) => {
     let image
     for (let i = 0; i < data.images.edges.length; ++i) {
       image = data.images.edges[i].node
-      console.log(image.relativePath)
       if (image.relativePath === src) {
         return image
       }
