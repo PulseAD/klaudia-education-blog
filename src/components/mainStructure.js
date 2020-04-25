@@ -16,7 +16,7 @@ const MainStructure = (props) => {
 
   return (
     <div id={props.type} className="main-structure">
-      <SEO title="Home" />
+      <SEO title={getTitle(props.type)} />
       <header>
         <div className="pictures">
           <div className="picture one"></div>

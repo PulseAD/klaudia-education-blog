@@ -1,6 +1,8 @@
 import React from "react"
 import MainStructure from '../components/mainStructure'
 import { graphql } from "gatsby"
+import '../styles/index.css'
+import '../components/layout.css'
 
 const TeachingEnglishPage = ({ data }) => {
   const getArticles = () => {

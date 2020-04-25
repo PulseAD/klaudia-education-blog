@@ -4,11 +4,14 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import Image from 'gatsby-image'
 import ReactMarkdown from 'react-markdown'
+import '../styles/index.css'
+import '../components/layout.css'
 
 export default ({ data }) => {
   const article = data.storyblokEntry
   return (
     <div id="article-page">
+      <SEO title={article.field_title_string} />
       <Menu />
       <main>
         <h1>{article.field_title_string}</h1>
