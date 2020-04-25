@@ -4,6 +4,7 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import Image from 'gatsby-image'
 import ReactMarkdown from 'react-markdown'
+import SEO from '../components/seo'
 import '../styles/index.css'
 import '../components/layout.css'
 
