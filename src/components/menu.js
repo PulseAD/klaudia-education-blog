@@ -5,7 +5,7 @@ const Menu = () => {
   const [displayOverlay, setDisplayOverlay] = useState(false)
   return (
     <nav>
-      <ul class="normal-menu">
+      <ul className="normal-menu">
         <li><Link to="/">Strona główna</Link></li>
         <li><Link to="/elementary-education">Edukacja przedszkolna</Link></li>
         <li><Link to="/kindergarten-education">Edukacja wczesnoszkolna</Link></li>

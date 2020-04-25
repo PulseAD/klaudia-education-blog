@@ -3,14 +3,16 @@ import MainStructure from '../components/mainStructure'
 import { graphql } from "gatsby"
 import '../styles/index.css'
 import '../components/layout.css'
+import getImages from '../helpers/getImages'
+import getArticles from '../helpers/getArticles'
 
 const KindergartenEducationPage = ({ data }) => {
-  const getArticles = () => {
-    const articles = data.allStoryblokEntry.edges.map(article => article.node)
-    return articles
-  }
   return (
-    <MainStructure type="kindergarten-education" articles={getArticles()} />
+    <MainStructure
+      type="kindergarten-education"
+      articles={getArticles(data)}
+      images={getImages(data)}
+    />
   )
 }
 
@@ -32,6 +34,15 @@ query KindergartenQuery {
               ...GatsbyImageSharpFixed
             }
           }
+        }
+      }
+    }
+  }
+  allImageSharp(filter: {fixed: {originalName: {regex: "/kindergarten_page/"}}}, sort: {order: ASC, fields: fixed___originalName}) {
+    edges {
+      node {
+        fixed(width: 600, quality: 100) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

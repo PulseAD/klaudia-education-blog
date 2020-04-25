@@ -3,14 +3,12 @@ import '../styles/index.css'
 import '../components/layout.css'
 import MainStructure from '../components/mainStructure'
 import { graphql } from "gatsby"
+import getImages from '../helpers/getImages'
+import getArticles from '../helpers/getArticles'
 
 const IndexPage = ({ data }) => {
-  const getArticles = () => {
-    const articles = data.allStoryblokEntry.edges.map(article => article.node)
-    return articles
-  }
   return (
-    <MainStructure type="home" articles={getArticles()} />
+    <MainStructure type="home" articles={getArticles(data)} images={getImages(data)} />
   )
 }
 
@@ -34,6 +32,15 @@ query MyQuery {
               ...GatsbyImageSharpFixed
             }
           }
+        }
+      }
+    }
+  }
+  allImageSharp(filter: {fixed: {originalName: {regex: "/main_page/"}}}, sort: {order: ASC, fields: fixed___originalName}) {
+    edges {
+      node {
+        fixed(width: 600, quality: 100) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
