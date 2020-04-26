@@ -3,7 +3,6 @@ import Menu from '../components/menu'
 import Footer from '../components/footer'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
-import BackgroundImage from 'gatsby-background-image'
 import { Link } from 'gatsby'
 import removeMd from 'remove-markdown'
 import getTitle from '../helpers/getTitle'
@@ -36,17 +35,13 @@ const MainStructure = (props) => {
       <header>
         <div className="pictures">
         {props.images.map((image, indice) => (
-          <BackgroundImage
-            Tag="div"
-            fixed={image.fixed}
+          <div
             className={'picture ' + numberToText(indice)}
             key={image.fixed.src}
-          ></BackgroundImage>
+            >
+            <Img fixed={image.fixed}></Img>
+          </div>
         ))}
-          {/* <div className="picture one"></div>
-          <div className="picture two"></div>
-          <div className="picture three"></div>
-          <div className="picture four"></div> */}
         </div>
         <div className="title">
           <h1>{getTitle(props.type)}</h1>

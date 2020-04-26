@@ -26,7 +26,7 @@ query TeachingEnglishQuery {
         slug
         selectionImage {
           childImageSharp {
-            fixed(width: 325, height:325 quality: 100) {
+            fixed(width: 325, height:325 quality: 75) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -37,7 +37,7 @@ query TeachingEnglishQuery {
   allImageSharp(filter: {fixed: {originalName: {regex: "/english_page/"}}}, sort: {order: ASC, fields: fixed___originalName}) {
     edges {
       node {
-        fixed(width: 600, quality: 100) {
+        fixed(width: 500, quality: 75) {
           ...GatsbyImageSharpFixed
         }
       }

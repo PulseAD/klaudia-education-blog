@@ -23,6 +23,11 @@ a {
   background-position-y: center;
 }
 
+.pictures .picture .gatsby-image-wrapper {
+  height: 325px !important;
+  width: 100% !important;
+}
+
 .picture.one {
   grid-area: 1 / 1 / 2 / 2;
 }
