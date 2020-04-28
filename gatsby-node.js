@@ -7,6 +7,8 @@ exports.onCreateNode = async ({ node, getNode, actions, store, cache, createNode
 
 exports.createPages = async ({ graphql, actions }) => {
   createStoryblokPages(actions, graphql)
+  const { createPage } = actions
+  createSeasonPages(actions)
 }
 
 exports.onCreateNode = async ({
@@ -53,26 +55,12 @@ exports.onCreateNode = async ({
 
 }
 
-// const createNodes = (node, getNode, actions) => {
-//   const { createNodeField } = actions
-//   if (
-//     node.internal.type === `StoryBlokEntry`
-//     && node.field_content_string === 'Article'
-//   ) {
-//     const slug = createFilePath({ node, getNode, basePath: `pages` })
-//     createNodeField({
-//       node,
-//       name: `slug`,
-//       value: slug,
-//     })
-//   }
-// }
 
 const createStoryblokPages = async (actions, graphql) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allStoryblokEntry {
+      allStoryblokEntry(filter: {field_component: {eq: "article"} }) {
         edges {
           node {
             slug
@@ -93,4 +81,18 @@ const createStoryblokPages = async (actions, graphql) => {
       },
     })
   })
+}
+
+const createSeasonPages = (actions) => {
+  const { createPage } = actions
+  const seasons = ['winter', 'autumn', 'spring', 'summer']
+  for (season of seasons) {
+    createPage({
+      path: `/elementary-education/${season}`,
+      component: path.resolve(`./src/pages/elementary-education.js`),
+      context: {
+        season: season,
+      },
+    })
+  }
 }

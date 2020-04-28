@@ -12,12 +12,26 @@ const Menu = () => {
         <li><Link to="/teaching-english">Nauczanie języka angielskiego</Link></li>
         <li><Link to="/pedagogics">Pedagogika</Link></li>
         <li><Link to="/psychology">Psychologia</Link></li>
-        <li>O mnie</li>
+        <li><Link to="/about-me">O mnie</Link></li>
       </ul>
-      <div className="hamburger" onClick={() => setDisplayOverlay(true)}>&#9776;</div>
+      <div
+        className="hamburger"
+        onClick={() => setDisplayOverlay(true)}
+        onKeyPress={() => setDisplayOverlay(true)}
+        role="none"
+        >
+          &#9776;
+      </div>
       {displayOverlay &&
         <div className="overlay">
-          <div className="cross" onClick={() => setDisplayOverlay(false)}>&times;</div>
+          <div
+            className="cross"
+            onClick={() => setDisplayOverlay(false)}
+            onKeyPress={() => setDisplayOverlay(false)}
+            role="none"
+            >
+              &times;
+          </div>
           <div className="overlay-content">
               <Link to="/">
                 Strona główna
@@ -37,7 +51,7 @@ const Menu = () => {
               <Link to="/psychology">
                 Psychologia
               </Link>
-              <Link to="/">
+              <Link to="/about-me">
                 O mnie
               </Link>
           </div>

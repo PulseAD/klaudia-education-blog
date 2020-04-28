@@ -6,27 +6,13 @@ import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import removeMd from 'remove-markdown'
 import getTitle from '../helpers/getTitle'
+import numberToText from '../helpers/numberToText'
 
 const MainStructure = (props) => {
 
   const getExcerpt = (article) => {
     const content = removeMd(article.field_content_string)
     return content.slice(0, 100) + ' ...'
-  }
-
-  const numberToText = (value) => {
-    if (value === 0) {
-      return 'one'
-    }
-    if (value === 1) {
-      return 'two'
-    }
-    if (value === 2) {
-      return 'three'
-    }
-    if (value === 3) {
-      return 'four'
-    }
   }
 
   return (

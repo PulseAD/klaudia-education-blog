@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Paytone+One&family=Lora&family=Fredoka+One&family=Merriweather:wght@400;700&display=swap');
-/* @import url('./background-images.css'); */
 
 a {
   text-decoration: none;
@@ -275,6 +274,23 @@ footer p {
   padding:10px 0px;
 }
 
+#about-me main {
+  display: flex;
+  font-family: Merriweather;
+  font-size: 21px;
+}
+
+#about-me main p {
+  max-width: 700px;
+  margin: 0px 30px;
+  margin-bottom: 40px;
+}
+
+#about-me main .gatsby-image-wrapper {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
 @media only screen and (max-width: 1200px) {
   .pictures {
     grid-template-columns: repeat(3, 1fr);
@@ -285,7 +301,8 @@ footer p {
   #kindergarten-education .picture.four,
   #teaching-english .picture.four,
   #pedagogics .picture.four,
-  #psychology .picture.one {
+  #psychology .picture.one,
+  #about-me .picture.four {
     display: none !important;
   }
 
@@ -305,11 +322,25 @@ footer p {
     grid-area: 1 / 1 / 2 / 2;
   }
 
+  #about-me main p {
+    max-width: 550px;
+    font-size: 18px;
+  }
+
+  #about-me main .gatsby-image-wrapper {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
 }
 
 @media only screen and (max-width: 992px) {
   nav ul li {
     font-size: 16px;
+  }
+
+  #about-me main p {
+    max-width: 400px;
   }
 }
 
@@ -323,7 +354,8 @@ footer p {
   #kindergarten-education .picture.three,
   #teaching-english .picture.three,
   #pedagogics .picture.two,
-  #psychology .picture.three {
+  #psychology .picture.three,
+  #about-me .picture.three {
     display: none !important;
   }
 
@@ -348,6 +380,10 @@ footer p {
   #article-page main .content {
     padding: 50px 0px;
     font-size: 18px;
+  }
+
+  #about-me main {
+    font-size: 16px;
   }
 }
 
@@ -381,7 +417,8 @@ footer p {
   #kindergarten-education .picture.two,
   #teaching-english .picture.two,
   #pedagogics .picture.one,
-  #psychology .picture.four {
+  #psychology .picture.four,
+  #about-me .picture.two {
     display: none !important;
   }
 
@@ -454,4 +491,15 @@ footer p {
     padding: 30px 0px;
     font-size: 14px;
   }
+
+  #about-me main {
+    font-size: 14px;
+  }
+
+  #about-me main .gatsby-image-wrapper {
+    width: 250px !important;
+    height: 250px !important;
+    margin-top: 10px;
+  }
+
 }
