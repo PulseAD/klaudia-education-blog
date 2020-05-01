@@ -7,8 +7,6 @@ exports.onCreateNode = async ({ node, getNode, actions, store, cache, createNode
 
 exports.createPages = async ({ graphql, actions }) => {
   createStoryblokPages(actions, graphql)
-  const { createPage } = actions
-  createSeasonPages(actions)
 }
 
 exports.onCreateNode = async ({
@@ -83,16 +81,3 @@ const createStoryblokPages = async (actions, graphql) => {
   })
 }
 
-const createSeasonPages = (actions) => {
-  const { createPage } = actions
-  const seasons = ['winter', 'autumn', 'spring', 'summer']
-  for (season of seasons) {
-    createPage({
-      path: `/elementary-education/${season}`,
-      component: path.resolve(`./src/pages/elementary-education.js`),
-      context: {
-        season: season,
-      },
-    })
-  }
-}

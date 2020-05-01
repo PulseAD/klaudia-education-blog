@@ -6,8 +6,7 @@ import '../components/layout.css'
 import getImages from '../helpers/getImages'
 import getArticles from '../helpers/getArticles'
 
-const ElementaryEducationPage = ({ data, pathContext }) => {
-  console.log(pathContext)
+const ElementaryEducationPage = ({ data }) => {
   return (
     <MainStructure
       type="elementary-education"
