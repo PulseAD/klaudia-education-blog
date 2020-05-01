@@ -1,6 +1,6 @@
 const getTitle = (type) => {
   if (type === 'home') {
-    return 'BLOG EDUKACYJNY'
+    return 'TULIPANOWO - BLOG EDUKACYJNY'
   }
   if (type === 'elementary-education') {
     return 'EDUKACJA PRZEDSZKOLNA'
