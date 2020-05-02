@@ -59,10 +59,6 @@ header .title {
   background-color: #D41157;
 }
 
-#teaching-english header .title {
-  background-color: #DDE3EE;
-}
-
 #pedagogics header .title {
   background-color: #B3ECAD;
 }
@@ -175,10 +171,6 @@ nav .hamburger {
   background-color: #fff;
 }
 
-#teaching-english main {
-  background-color: #DCDEDE;
-}
-
 #pedagogics main {
   background-color: #D0F0D3;
 }
@@ -271,6 +263,8 @@ footer p {
 
 #article-page main .content img {
   display: block;
+  margin: 0 auto;
+  width: 600px;
   padding:10px 0px;
 }
 
@@ -299,7 +293,6 @@ footer p {
   #home .picture.four,
   #elementary-education .picture.three,
   #kindergarten-education .picture.four,
-  #teaching-english .picture.four,
   #pedagogics .picture.four,
   #psychology .picture.one,
   #about-me .picture.four {
@@ -352,7 +345,6 @@ footer p {
   #home .picture.three,
   #elementary-education .picture.four,
   #kindergarten-education .picture.three,
-  #teaching-english .picture.three,
   #pedagogics .picture.two,
   #psychology .picture.three,
   #about-me .picture.three {
@@ -415,7 +407,6 @@ footer p {
   #home .picture.two,
   #elementary-education .picture.two,
   #kindergarten-education .picture.two,
-  #teaching-english .picture.two,
   #pedagogics .picture.one,
   #psychology .picture.four,
   #about-me .picture.two {
