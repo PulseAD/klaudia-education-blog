@@ -29,7 +29,7 @@ query MyQuery {
         selectionImage {
           childImageSharp {
             fixed(width: 325, height: 325, quality: 100) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
         }
@@ -40,7 +40,7 @@ query MyQuery {
     edges {
       node {
         fixed(width: 500, quality: 75) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }

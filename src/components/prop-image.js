@@ -12,7 +12,7 @@ const Image = ({ src }) => {
             relativePath
             childImageSharp {
             fluid(maxHeight: 325) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }

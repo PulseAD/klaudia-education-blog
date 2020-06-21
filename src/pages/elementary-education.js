@@ -31,7 +31,7 @@ query ElementaryQuery {
         selectionImage {
           childImageSharp {
             fixed(width: 325, height:325 quality: 75) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
         }
@@ -42,7 +42,7 @@ query ElementaryQuery {
     edges {
       node {
         fixed(width: 500, quality: 75) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }

@@ -31,7 +31,7 @@ query KindergartenQuery {
         selectionImage {
           childImageSharp {
             fixed(width: 325, height:325 quality: 75) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp_noBase64
             }
           }
         }
@@ -42,7 +42,7 @@ query KindergartenQuery {
     edges {
       node {
         fixed(width: 500, quality: 75) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
